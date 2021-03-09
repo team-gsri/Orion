@@ -2,6 +2,12 @@
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 ["Preload"] call BIS_fnc_arsenal;
 
+{ missionNamespace setVariable [_x, true]; } forEach [
+	"BIS_respSpecAllowFreeCamera",		// Allow moving the camera independent from units (players)
+	"BIS_respSpecShowHeader",			// Top bar of the spectator UI including mission time
+	"BIS_respSpecLists"					// Show list of available units and locations on the left hand side
+];
+
 // Waiting for internal stuff
 waitUntil { !isNil "DW_MISSION_REINIT" };
 
